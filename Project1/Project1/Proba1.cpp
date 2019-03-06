@@ -3,10 +3,11 @@
 #include <time.h>
 
 void bubbleSort(int tab[], int n);
+void insertionSort(int tab[], int n);
 
 int main()
 {
-	const int rozmiar = 10000;
+	const int rozmiar = 10;
 	int tablica[rozmiar];
 
 
@@ -17,7 +18,8 @@ int main()
 	}
 
 
-	bubbleSort(tablica, rozmiar);
+	//bubbleSort(tablica, rozmiar);
+	insertionSort(tablica, rozmiar);
 
 	std::cout << "posortowana: ";
 	for (int i = 0; i < rozmiar; ++i)
@@ -31,6 +33,7 @@ int main()
 
 void bubbleSort(int tab[], int n)
 {
+	int temp;
 	bool z = 0;
 	do
 	{
@@ -39,11 +42,28 @@ void bubbleSort(int tab[], int n)
 		{
 			if (tab[i] > tab[i + 1])
 			{
-				int temp = tab[i];
+				temp = tab[i];
 				tab[i] = tab[i + 1];
 				tab[i + 1] = temp;
 				z = 1;
 			}
 		}
 	} while (z);
+}
+
+void insertionSort(int tab[], int n)
+{
+	int wstawiany;
+	int j;
+	for (int i = 1; i < n; ++i)
+	{
+		wstawiany = tab[i];
+		j = i;
+		while (j > 0 && tab[j - 1] > wstawiany)
+		{
+			tab[j] = tab[j - 1];
+			j--;
+		}
+		tab[j] = wstawiany;
+	}
 }
