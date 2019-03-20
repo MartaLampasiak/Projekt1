@@ -115,7 +115,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="bubbleSort.cpp" />
+    <ClCompile Include="insertionSort.cpp" />
     <ClCompile Include="Proba1.cpp" />
+    <ClCompile Include="quickSort.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bubbleSort.hpp" />
+    <ClInclude Include="insertionSort.hpp" />
+    <ClInclude Include="mergeSort.hpp" />
+    <ClInclude Include="quickSort.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
