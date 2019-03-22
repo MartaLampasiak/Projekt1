@@ -22,7 +22,7 @@ int main()
 	std::cin >>  rozmiar;
 
 	int *tablica = new int[rozmiar];
-
+	
 
 
 	for (int i = 0; i < rozmiar; ++i)
@@ -35,7 +35,8 @@ int main()
 	//bubbleSort(tablica, rozmiar);
 	//insertionSort(tablica, rozmiar);
 	//quickSort(tablica, 0, rozmiar - 1);
-	
+
+	mergeSort(tablica, 0, rozmiar - 1);
 
 	koniec = clock();
 	roznica = (koniec - start) / (double)CLOCKS_PER_SEC;
