@@ -116,6 +116,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="bubbleSort.cpp" />
+    <ClCompile Include="funkcjeDodatkowe.cpp" />
+    <ClCompile Include="heapSort.cpp" />
     <ClCompile Include="insertionSort.cpp" />
     <ClCompile Include="mergeSort.cpp" />
     <ClCompile Include="Proba1.cpp" />
@@ -123,6 +125,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bubbleSort.hpp" />
+    <ClInclude Include="funkcjeDodatkowe.hpp" />
+    <ClInclude Include="heapSort.hpp" />
     <ClInclude Include="insertionSort.hpp" />
     <ClInclude Include="mergeSort.hpp" />
     <ClInclude Include="quickSort.hpp" />

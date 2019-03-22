@@ -2,9 +2,8 @@
 
 
 
-void merge(int tab[], int left, int mid, int right)
+void merge(int tab[], int tab_pom[], int left, int mid, int right)
 {
-	int *tab_pom = new int[right+left];
 	int left1 = left, right1 = mid;
 	int left2 = mid + 1, right2 = right;
 	int i = left1;
@@ -39,14 +38,14 @@ void merge(int tab[], int left, int mid, int right)
 		tab[i] = tab_pom[i];
 }
 
-void mergeSort(int tab[], int left, int right)
+void mergeSort(int tab[], int tab_pom[], int left, int right)
 {
 	int mid;
 	if (left < right)
 	{
 		mid = (left + right) / 2;
-		mergeSort(tab, left, mid);
-		mergeSort(tab, mid + 1, right);
-		merge(tab, left, mid, right);
+		mergeSort(tab, tab_pom, left, mid);
+		mergeSort(tab, tab_pom, mid + 1, right);
+		merge(tab, tab_pom, left, mid, right);
 	}
 }

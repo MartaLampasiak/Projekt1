@@ -1,8 +1,8 @@
 #include <iostream>
 #include <cstdlib>
-//#include <time.h>
 #include <ctime>
 
+#include "funkcjeDodatkowe.hpp"
 #include "insertionSort.hpp"
 #include "bubbleSort.hpp"
 #include "mergeSort.hpp"
@@ -22,13 +22,12 @@ int main()
 	std::cin >>  rozmiar;
 
 	int *tablica = new int[rozmiar];
+	int *tablica_pomocnicza = new int[rozmiar]; //do merge
 	
-
 
 	for (int i = 0; i < rozmiar; ++i)
 	{
 		tablica[i] = rand();
-		//std::cout << tablica[i] << " ";
 	}
 
 	start = clock();
@@ -36,17 +35,21 @@ int main()
 	//insertionSort(tablica, rozmiar);
 	//quickSort(tablica, 0, rozmiar - 1);
 
-	mergeSort(tablica, 0, rozmiar - 1);
+	mergeSort(tablica,tablica_pomocnicza, 0, rozmiar - 1);
 
 	koniec = clock();
 	roznica = (koniec - start) / (double)CLOCKS_PER_SEC;
 	std::cout << "Czas wykonania: " << roznica << "\n";
 
-	std::cout << "posortowana: " << "\n";
-	for (int i = 0; i < rozmiar; ++i)
+	std::cout << "Posortowana" << "\n";
+	for (int i = 0; i < rozmiar - 1; ++i)
 	{
 		std::cout << tablica[i] << " ";
 	}
+		
+
+	if (czyPosortowanaRosnaco)
+		std::cout << "\nPoprawnie posortowana rosnaco" << "\n";
 
 	delete[] tablica;
 	system("pause");

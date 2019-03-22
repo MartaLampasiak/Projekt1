@@ -30,6 +30,12 @@
     <ClCompile Include="mergeSort.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
+    <ClCompile Include="funkcjeDodatkowe.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
+    <ClCompile Include="heapSort.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="insertionSort.hpp">
@@ -42,6 +48,12 @@
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
     <ClInclude Include="quickSort.hpp">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="funkcjeDodatkowe.hpp">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+    <ClInclude Include="heapSort.hpp">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
   </ItemGroup>
