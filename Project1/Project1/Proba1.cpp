@@ -3,10 +3,11 @@
 #include <ctime>
 
 #include "funkcjeDodatkowe.hpp"
-#include "insertionSort.hpp"
 #include "bubbleSort.hpp"
-#include "mergeSort.hpp"
+#include "insertionSort.hpp"
 #include "quickSort.hpp"
+#include "mergeSort.hpp"
+#include "heapSort.hpp"
 
 
 int main()
@@ -35,7 +36,8 @@ int main()
 	//insertionSort(tablica, rozmiar);
 	//quickSort(tablica, 0, rozmiar - 1);
 
-	mergeSort(tablica,tablica_pomocnicza, 0, rozmiar - 1);
+	//mergeSort(tablica,tablica_pomocnicza, 0, rozmiar - 1);
+	heapSort(tablica, rozmiar);
 
 	koniec = clock();
 	roznica = (koniec - start) / (double)CLOCKS_PER_SEC;
@@ -44,7 +46,7 @@ int main()
 	std::cout << "Posortowana" << "\n";
 	for (int i = 0; i < rozmiar - 1; ++i)
 	{
-		std::cout << tablica[i] << " ";
+		//std::cout << tablica[i] << " ";
 	}
 		
 

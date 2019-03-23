@@ -45,7 +45,7 @@ void mergeSort(int tab[], int tab_pom[], int left, int right)
 	{
 		mid = (left + right) / 2;
 		mergeSort(tab, tab_pom, left, mid);
-		mergeSort(tab, tab_pom, mid + 1, right);
+		mergeSort(tab, tab_pom, mid+1, right);
 		merge(tab, tab_pom, left, mid, right);
 	}
 }

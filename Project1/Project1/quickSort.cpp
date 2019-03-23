@@ -23,9 +23,9 @@ void quickSort(int tab[], int left, int right)
 	tab[right] = tab[j];
 	tab[j] = pivot;
 
-	if (left < j - 1)
-		quickSort(tab, left, j - 1);
-	if (j + 1 < right)
-		quickSort(tab, j + 1, right);
+	if (left < j-1)
+		quickSort(tab, left, j-1);
+	if (j+1 < right)
+		quickSort(tab, j+1, right);
 
 }
