@@ -28,13 +28,13 @@ int podzielnaPartycje(int tab[], int left, int right)
 
 
 
-void quickSort(int tab[], int left, int right)
+void quickSort(int tab[], int left, int right, double ilePosortowane)
 {
-	int j = podzielnaPartycje(tab, left, right);
+	int j = podzielnaPartycje(tab, left, right*ilePosortowane);
 
 	if (left < j-1)
-		quickSort(tab, left, j-1);
+		quickSort(tab, left, j-1, 1);
 	if (j+1 < right)
-		quickSort(tab, j+1, right);
+		quickSort(tab, j+1, right*ilePosortowane, 1);
 
 }

@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include <math.h>
 
 #include "funkcjeDodatkowe.hpp"
 #include "bubbleSort.hpp"
@@ -30,16 +29,17 @@ int main()
 	for (int i = 0; i < rozmiar; ++i)
 	{
 		tablica[i] = rand();
-	//	std::cout << tablica[i] << " ";
+		std::cout << tablica[i] << " ";
 	}
 
 	start = clock();
 	//bubbleSort(tablica, rozmiar);
 	//insertionSort(tablica, rozmiar);
-	//quickSort(tablica, 0, rozmiar-1);
+	quickSort(tablica, 0, rozmiar-1, 0.5);
 	//mergeSort(tablica,tablica_pomocnicza, 0, rozmiar - 1);
 	//heapSort(tablica, rozmiar);
-	//IntroSort(tablica, rozmiar-1, 2*(log(rozmiar)/log(2)));
+	//IntroSort(tablica, 0,rozmiar-1, 2*(log(rozmiar)/log(2)));
+
 	//Hybrid_Introsort(tablica, rozmiar);
 	
 	//double logarytmik = 2 * (log(rozmiar) / log(2));
