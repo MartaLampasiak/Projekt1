@@ -119,6 +119,7 @@
     <ClCompile Include="funkcjeDodatkowe.cpp" />
     <ClCompile Include="heapSort.cpp" />
     <ClCompile Include="insertionSort.cpp" />
+    <ClCompile Include="IntroSort.cpp" />
     <ClCompile Include="mergeSort.cpp" />
     <ClCompile Include="Proba1.cpp" />
     <ClCompile Include="quickSort.cpp" />
@@ -128,6 +129,7 @@
     <ClInclude Include="funkcjeDodatkowe.hpp" />
     <ClInclude Include="heapSort.hpp" />
     <ClInclude Include="insertionSort.hpp" />
+    <ClInclude Include="IntroSort.hpp" />
     <ClInclude Include="mergeSort.hpp" />
     <ClInclude Include="quickSort.hpp" />
   </ItemGroup>
