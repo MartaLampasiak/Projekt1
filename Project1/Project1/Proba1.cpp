@@ -40,7 +40,7 @@ int main()
 	//mergeSort(tablica,tablica_pomocnicza, 0, rozmiar - 1);
 	//heapSort(tablica, rozmiar);
 	//IntroSort(tablica, rozmiar-1, 2*(log(rozmiar)/log(2)));
-	Hybrid_Introsort(tablica, rozmiar);
+	//Hybrid_Introsort(tablica, rozmiar);
 	
 	//double logarytmik = 2 * (log(rozmiar) / log(2));
 	//std::cout << logarytmik;
@@ -56,8 +56,10 @@ int main()
 	}
 		
 
-	if (czyPosortowanaRosnaco)
+	if (czyPosortowanaRosnaco(tablica, rozmiar))
 		std::cout << "\nPoprawnie posortowana rosnaco" << "\n";
+	else
+		std::cout << "\nTablica nieposortowana" << "\n";
 
 	delete[] tablica;
 	system("pause");
