@@ -1,6 +1,7 @@
 #include "quickSort.hpp"
 
-void quickSort(int tab[], int left, int right)
+
+int podzielnaPartycje(int tab[], int left, int right)
 {
 	int i, j, p, pivot, temp;
 
@@ -22,6 +23,14 @@ void quickSort(int tab[], int left, int right)
 	//wszystko posortowane - wymieniamy pivota z elementem j-tym
 	tab[right] = tab[j];
 	tab[j] = pivot;
+	return j;
+}
+
+
+
+void quickSort(int tab[], int left, int right)
+{
+	int j = podzielnaPartycje(tab, left, right);
 
 	if (left < j-1)
 		quickSort(tab, left, j-1);

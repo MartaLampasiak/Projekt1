@@ -29,22 +29,23 @@ int main()
 	for (int i = 0; i < rozmiar; ++i)
 	{
 		tablica[i] = rand();
+		//std::cout << tablica[i] << " ";
 	}
 
 	start = clock();
 	//bubbleSort(tablica, rozmiar);
 	//insertionSort(tablica, rozmiar);
-	//quickSort(tablica, 0, rozmiar - 1);
+	quickSort(tablica, 0, rozmiar-1);
 
 	//mergeSort(tablica,tablica_pomocnicza, 0, rozmiar - 1);
-	heapSort(tablica, rozmiar);
+	//heapSort(tablica, rozmiar);
 
 	koniec = clock();
 	roznica = (koniec - start) / (double)CLOCKS_PER_SEC;
 	std::cout << "Czas wykonania: " << roznica << "\n";
 
 	std::cout << "Posortowana" << "\n";
-	for (int i = 0; i < rozmiar - 1; ++i)
+	for (int i = 0; i < rozmiar; ++i)
 	{
 		//std::cout << tablica[i] << " ";
 	}
