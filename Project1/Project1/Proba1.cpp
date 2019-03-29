@@ -17,51 +17,75 @@ int main()
 	std::cout.precision(5);
 	clock_t start, koniec;
 
+	int wiersz = 100;
 	int rozmiar;
 
 	std::cout << "Podaj rozmiar tablicy: " << "\n";
 	std::cin >>  rozmiar;
-
-	int *tablica = new int[rozmiar];
-	int *tablica_pomocnicza = new int[rozmiar]; //do merge
 	
+	int **tablica = new int *[wiersz];
+	int *tablica_pomocnicza = new int[rozmiar]; //do merge
 
-	for (int i = 0; i < rozmiar; ++i)
+
+	for (int i = 0; i < wiersz - 1; ++i)
 	{
-		tablica[i] = rand();
-		std::cout << tablica[i] << " ";
+		tablica[i] = new int[rozmiar];
+		for (int j = 0; j <rozmiar; ++j)
+			tablica[i][j] = rand();
+		
+	}
+
+	for (int i = 0; i < wiersz - 1; ++i)
+	{
+		for (int j = 0; j < rozmiar; ++j)
+		{
+			//std::cout << tablica[i][j] << " ";
+		}
+		//std::cout << "\n";
 	}
 
 	start = clock();
-	//bubbleSort(tablica, rozmiar);
-	//insertionSort(tablica, rozmiar);
-	quickSort(tablica, 0, rozmiar-1, 0.5);
-	//mergeSort(tablica,tablica_pomocnicza, 0, rozmiar - 1);
-	//heapSort(tablica, rozmiar);
-	//IntroSort(tablica, 0,rozmiar-1, 2*(log(rozmiar)/log(2)));
 
-	//Hybrid_Introsort(tablica, rozmiar);
+	for (int i = 0; i < wiersz - 1; ++i)
+	{	
+		//bubbleSort(tablica[i], rozmiar);
+		//insertionSort(tablica[i], rozmiar);
+		//mergeSort(tablica[i],tablica_pomocnicza, 0, rozmiar - 1);
+		//heapSort(tablica[i], rozmiar);
+		//quickSort(tablica[i], 0, rozmiar-1, 0.25);
+		//quickSort(tablica[i], 0, rozmiar - 1, 1);
+		//IntroSort(tablica[i], 0,rozmiar-1, 2*(log(rozmiar)/log(2)));
+		sortujOdwrotnie(tablica[i], 0, rozmiar - 1, 1);
+	}
 	
-	//double logarytmik = 2 * (log(rozmiar) / log(2));
-	//std::cout << logarytmik;
-
 	koniec = clock();
 	roznica = (koniec - start) / (double)CLOCKS_PER_SEC;
 	std::cout << "Czas wykonania: " << roznica << "\n";
 
 	std::cout << "Posortowana" << "\n";
-	for (int i = 0; i < rozmiar; ++i)
+	for (int i = 0; i < wiersz - 1; ++i)
 	{
-		std::cout << tablica[i] << " ";
+		for (int j = 0; j < rozmiar; ++j)
+		{
+			std::cout << tablica[i][j] << " ";
+		}
+		std::cout << "\n";
 	}
 		
-
-	if (czyPosortowanaRosnaco(tablica, rozmiar))
-		std::cout << "\nPoprawnie posortowana rosnaco" << "\n";
+	//EXOR 1 i 1 = 0, 0 i 0 = 0, reszta 1
+	if (czyPosortowanaRosnaco(tablica,wiersz, rozmiar) ^ czyPosortowanaMalejaco(tablica, wiersz, rozmiar))
+		std::cout << "\nPoprawnie posortowana" << "\n";
 	else
 		std::cout << "\nTablica nieposortowana" << "\n";
 
+
+
+// zniszczenie tablicy
+	for (int i = 0; i < wiersz - 1; ++i)
+		delete [] tablica[i];
 	delete[] tablica;
+	tablica = NULL;
+
 	system("pause");
 	return 0;
 }
