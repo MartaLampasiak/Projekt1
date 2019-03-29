@@ -56,7 +56,7 @@ start = clock();
 		//bubbleSort(tablica[i], rozmiar);
 		//insertionSort(tablica[i], rozmiar);
 		//mergeSort(tablica[i],tablica_pomocnicza, 0, rozmiar - 1);
-		heapSort(tablica[i], rozmiar);
+		//heapSort(tablica[i], rozmiar);
 		//quickSort(tablica[i], 0, rozmiar - 1, 1);
 		//IntroSort(tablica[i], 0,rozmiar - 1, 2*(log(rozmiar)/log(2)));
 		//sortujOdwrotnie(tablica[i], 0, rozmiar - 1, 1);
