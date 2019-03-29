@@ -1,4 +1,5 @@
 #pragma once
+#pragma warning(disable : 4996)
 
 //// left - indeks pierwszego elementu, right - indeks ostatniego elementu
 //int podzielnaPartycje(int tab[], int left, int right);
@@ -37,11 +38,11 @@ int podzielnaPartycje(T tab[], int left, int right)
 template <typename T>
 void quickSort(T tab[], int left, int right, double ilePosortowane)
 {
-	int pivotIndex = podzielnaPartycje(tab, left, right*ilePosortowane);
+	int pivotIndex = podzielnaPartycje(tab, left, static_cast<int>(right*ilePosortowane));
 
 	if (left < pivotIndex - 1)
-		quickSort(tab, left, pivotIndex - 1, 1.0);
+		quickSort(tab, left, pivotIndex - 1, 1);
 	if (pivotIndex + 1 < right)
-		quickSort(tab, pivotIndex + 1, right*ilePosortowane, 1.0);
+		quickSort(tab, pivotIndex + 1, static_cast<int>(right*ilePosortowane), 1);
 
 }

@@ -35,6 +35,7 @@ bool czyPosortowanaMalejaco(T **tab, int wiersz, int rozmiar)
 	return 1;
 }
 
+//Sortowanie odwrotne quicksortem
 template <typename T>
 int podzielnaPartycjeOdwrotne(T tab[], int left, int right)
 {

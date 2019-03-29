@@ -27,15 +27,18 @@ int main()
 	int *tablica_pomocnicza = new int[rozmiar]; //do merge
 
 
-	for (int i = 0; i < wiersz - 1; ++i)
+	//wype³nianie tablicy
+	for (int i = 0; i < wiersz; ++i)
 	{
 		tablica[i] = new int[rozmiar];
-		for (int j = 0; j <rozmiar; ++j)
+		for (int j = 0; j < rozmiar; ++j)
 			tablica[i][j] = rand();
 		
 	}
 
-	for (int i = 0; i < wiersz - 1; ++i)
+
+	//wyswietlanie tablicy
+	for (int i = 0; i < wiersz; ++i)
 	{
 		for (int j = 0; j < rozmiar; ++j)
 		{
@@ -44,26 +47,36 @@ int main()
 		//std::cout << "\n";
 	}
 
-	start = clock();
+	
+start = clock();
 
-	for (int i = 0; i < wiersz - 1; ++i)
+	for (int i = 0; i < wiersz; i++)
 	{	
+		
 		//bubbleSort(tablica[i], rozmiar);
 		//insertionSort(tablica[i], rozmiar);
 		//mergeSort(tablica[i],tablica_pomocnicza, 0, rozmiar - 1);
-		//heapSort(tablica[i], rozmiar);
-		//quickSort(tablica[i], 0, rozmiar-1, 0.25);
+		heapSort(tablica[i], rozmiar);
 		//quickSort(tablica[i], 0, rozmiar - 1, 1);
-		//IntroSort(tablica[i], 0,rozmiar-1, 2*(log(rozmiar)/log(2)));
-		sortujOdwrotnie(tablica[i], 0, rozmiar - 1, 1);
+		//IntroSort(tablica[i], 0,rozmiar - 1, 2*(log(rozmiar)/log(2)));
+		//sortujOdwrotnie(tablica[i], 0, rozmiar - 1, 1);
 	}
+
+	
+	/*for (int i = 0; i < wiersz; ++i)
+	{
+	for (int j = 0; j < rozmiar; ++j)
+		quickSort(tablica[i], 0, rozmiar - 1, 1);
+	}*/
 	
 	koniec = clock();
 	roznica = (koniec - start) / (double)CLOCKS_PER_SEC;
 	std::cout << "Czas wykonania: " << roznica << "\n";
 
+
+	//wyswietlanie tablicy posortowanej
 	std::cout << "Posortowana" << "\n";
-	for (int i = 0; i < wiersz - 1; ++i)
+	for (int i = 0; i < wiersz; ++i)
 	{
 		for (int j = 0; j < rozmiar; ++j)
 		{
@@ -81,7 +94,7 @@ int main()
 
 
 // zniszczenie tablicy
-	for (int i = 0; i < wiersz - 1; ++i)
+	for (int i = 0; i < wiersz; ++i)
 		delete [] tablica[i];
 	delete[] tablica;
 	tablica = NULL;
