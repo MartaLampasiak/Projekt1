@@ -126,6 +126,11 @@
     <ClInclude Include="mergeSort.hpp" />
     <ClInclude Include="quickSort.hpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="plik.txt" />
+    <Text Include="quicksort_chrono.txt" />
+    <Text Include="quicksort_clock.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

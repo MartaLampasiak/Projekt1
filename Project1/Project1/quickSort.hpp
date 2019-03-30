@@ -38,11 +38,11 @@ int podzielnaPartycje(T tab[], int left, int right)
 template <typename T>
 void quickSort(T tab[], int left, int right, double ilePosortowane)
 {
-	int pivotIndex = podzielnaPartycje(tab, left, static_cast<int>(right*ilePosortowane));
+	int pivotIndex = podzielnaPartycje(tab, left, T (right*ilePosortowane));
 
 	if (left < pivotIndex - 1)
 		quickSort(tab, left, pivotIndex - 1, 1);
 	if (pivotIndex + 1 < right)
-		quickSort(tab, pivotIndex + 1, static_cast<int>(right*ilePosortowane), 1);
+		quickSort(tab, pivotIndex + 1, T (right*ilePosortowane), 1);
 
 }

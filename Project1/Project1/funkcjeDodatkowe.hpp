@@ -64,12 +64,12 @@ int podzielnaPartycjeOdwrotne(T tab[], int left, int right)
 }
 
 template <typename T>
-void sortujOdwrotnie(T tab[], int left, int right, double ilePosortowane)
+void sortujOdwrotnie(T tab[], int left, int right)
 {
-	int pivotIndex = podzielnaPartycjeOdwrotne(tab, left, right*ilePosortowane);
+	int pivotIndex = podzielnaPartycjeOdwrotne(tab, left, right);
 
 	if (left < pivotIndex - 1)
-		sortujOdwrotnie(tab, left, pivotIndex - 1, 1.0);
+		sortujOdwrotnie(tab, left, pivotIndex - 1);
 	if (pivotIndex + 1 < right)
-		sortujOdwrotnie(tab, pivotIndex + 1, right*ilePosortowane, 1.0);
+		sortujOdwrotnie(tab, pivotIndex + 1, right);
 }
