@@ -7,25 +7,56 @@
 #include "insertionSort.hpp"
 
 
+
+////test z insert
+//template <typename T>
+//void IntroSort(T tab[], int left, int right, double MaxRekurencji)
+//{
+//	if ((right - left) < 16)
+//	{
+//		insertionSort(tab, right);
+//	}
+//	else if (MaxRekurencji == 0)
+//	{
+//		heapSort(tab, right);
+//		return;
+//	}
+//
+//	else 
+//	{
+//		int pivotIndex = podzielnaPartycje(tab, left, right - 1);
+//		IntroSort(tab, left, pivotIndex, MaxRekurencji - 1);
+//		IntroSort(tab, pivotIndex + 1, right, MaxRekurencji - 1);
+//	}
+//
+//}
+
+
+//Moj intro
 template <typename T>
-bool IntroSort(T tab[], int left, int right, double MaxRekurencji)
+void IntroSort(T tab[], int left, int right, int MaxRekurencji)
 {
 	if (left < right)
 	{
 		if (MaxRekurencji == 0)
 		{
-			heapSort(tab, right + 1);
-			return 1;
+			heapSortintro(tab,left, right);
+			//return;
 		}
 
-		if (MaxRekurencji > 0)
-		{
-			int pivotIndex = podzielnaPartycje(tab, left, right);
+		
+			int pivotIndex = podzielnaPartycje(tab, left, right-1);
 			IntroSort(tab, left, pivotIndex, MaxRekurencji - 1);
 			IntroSort(tab, pivotIndex + 1, right, MaxRekurencji - 1);
-		}
+		
 	}
-	return 1;
+}
+
+template <typename T>
+void IntroSort(T tab[], int right)
+{
+	int MaxRekurencji = (2 * floor(log2(right)));
+	IntroSort(tab, 0, right, MaxRekurencji);
 }
 
 
@@ -45,10 +76,10 @@ bool IntroSort(T tab[], int left, int right, double MaxRekurencji)
 //		IntroSort(tab, pivotIndex, MaxRekurencji - 1);
 //		if(rozmiar-1-pivotIndex > 0)
 //		IntroSort(tab + pivotIndex + 1,rozmiar - 1 - pivotIndex, MaxRekurencji - 1);
-//	//}
+//	}
 //	
-
-
+//
+//
 
 
 
@@ -70,14 +101,19 @@ bool IntroSort(T tab[], int left, int right, double MaxRekurencji)
 //{
 //	if (left < right)
 //	{
-//		if (MaxRekurencji == 0)
+//		if ((right - left+1) < 16)
+//			insertionSort(tab, right + 1);
+//		else if (MaxRekurencji == 0)
 //		{
 //			heapSort(tab, right + 1);
 //			return;
 //		}
-//		int pivotIndex = podzielnaPartycje(tab, left, right);
-//		IntroSort(tab, left, pivotIndex - 1, MaxRekurencji - 1);
-//		IntroSort(tab, pivotIndex + 1, right, MaxRekurencji - 1);
+//		else 
+//		{
+//			int pivotIndex = podzielnaPartycje(tab, left, right);
+//			IntroSort(tab, left, pivotIndex - 1, MaxRekurencji - 1);
+//			IntroSort(tab, pivotIndex + 1, right, MaxRekurencji - 1);
+//		}
 //	}
 //}
 
@@ -87,7 +123,7 @@ bool IntroSort(T tab[], int left, int right, double MaxRekurencji)
 //void IntroSort(int tab[], int rozmiar, double MaxRekurencji)
 //{
 //	int i = podzielnaPartycje(tab, 0, rozmiar - 1);
-//	/*if (MaxRekurencji <= 0)
+//	if (MaxRekurencji <= 0)
 //	{
 //		heapSort(tab, rozmiar);
 //		return;
@@ -97,7 +133,7 @@ bool IntroSort(T tab[], int left, int right, double MaxRekurencji)
 //	if (i > 9)
 //		IntroSort(tab, i, MaxRekurencji - 1);
 //	if(rozmiar-i-1 > 9)
-//		IntroSort(tab+i+1, rozmiar-1-i, MaxRekurencji - 1);*/
+//		IntroSort(tab+i+1, rozmiar-1-i, MaxRekurencji - 1);
 //
 //	if (rozmiar <= 1)
 //		return;
@@ -157,17 +193,17 @@ bool IntroSort(T tab[], int left, int right, double MaxRekurencji)
 //{
 //	if (left < right)
 //	{
-//		if (MaxRekurencji == 0)
+//		if (MaxRekurencji != 0)
 //		{
 //			heapSort(tab, right + 1);
 //			return;
 //		}
-//		if (MaxRekurencji > 0)
-//		{
+//	//	if (MaxRekurencji > 0)
+//	//	{
 //			int pivotIndex = podzielnaPartycje(tab, left, right);
 //			IntroSort(tab, left, pivotIndex-1, MaxRekurencji - 1);
 //			IntroSort(tab, pivotIndex + 1, right, MaxRekurencji - 1);
-//		}
+//		//}
 //
 //	}
 //}

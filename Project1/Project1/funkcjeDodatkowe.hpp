@@ -1,9 +1,4 @@
 #pragma once
-
-//bool czyPosortowanaRosnaco(int **tab, int wiersz, int rozmiar);
-//bool czyPosortowanaMalejaco(int **tab, int wiersz, int rozmiar);
-//int podzielnaPartycjeOdwrotne(int tab[], int left, int right);
-//void SortujOdwrotnie(int tab[], int left, int right, double ilePosortowane);
 #include <iostream>
 
 
@@ -18,6 +13,23 @@ bool czyPosortowanaRosnaco(T **tab, int wiersz, int rozmiar)
 				return 0;
 		}
 	}
+	return 1;
+}
+
+template <typename T>
+bool czyPosortowanaRosnacoJedna(T tab[], int rozmiar)
+{
+	
+		for (int j = 0; j < rozmiar - 1; ++j)
+		{
+			if (tab[j] > tab[j + 1])
+			{
+				std::cout << "NIEPOSORTOWANE !!!!!!!!!!\n";
+				return 0;
+			}
+				
+		}
+	
 	return 1;
 }
 
