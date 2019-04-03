@@ -1,6 +1,6 @@
 #pragma once
 
-//void insertionSort(int tab[], int n);
+
 
 template <typename T>
 void insertionSort(T tab[], int n)

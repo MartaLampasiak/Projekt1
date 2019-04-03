@@ -1,7 +1,8 @@
 #pragma once
 #include <iostream>
 
-
+/*	Procedura sprawdzajaca posortowanie rosnace		*
+ *	tablicy dwuwymiarowej. Wykorzystywana do testow.*/
 template <typename T>
 bool czyPosortowanaRosnaco(T **tab, int wiersz, int rozmiar)
 {
@@ -16,15 +17,16 @@ bool czyPosortowanaRosnaco(T **tab, int wiersz, int rozmiar)
 	return 1;
 }
 
+/*	Procedura sprawdzajaca posortowanie rosnace		*
+ *	tablicy jednowymiarowej.						*/
 template <typename T>
 bool czyPosortowanaRosnacoJedna(T tab[], int rozmiar)
 {
-	
 		for (int j = 0; j < rozmiar - 1; ++j)
 		{
 			if (tab[j] > tab[j + 1])
 			{
-				std::cout << "NIEPOSORTOWANE !!!!!!!!!!\n";
+				std::cout << "NIEPOSORTOWANE!\n";
 				return 0;
 			}
 				
@@ -33,6 +35,10 @@ bool czyPosortowanaRosnacoJedna(T tab[], int rozmiar)
 	return 1;
 }
 
+
+/*	Procedura sprawdzajaca posortowanie malejace		*
+ *	tablicy dwuwymiarowej. Wykorzystywana do testow		*
+ *  procedury sortujacej tablice odwrotnie.				*/
 template <typename T>
 bool czyPosortowanaMalejaco(T **tab, int wiersz, int rozmiar)
 {
@@ -47,7 +53,13 @@ bool czyPosortowanaMalejaco(T **tab, int wiersz, int rozmiar)
 	return 1;
 }
 
-//Sortowanie odwrotne quicksortem
+/*	Funkcja dzielaca tablice na partycje     *
+ *	odwrotne (z lewej strony pivota elementy *
+ *  wieksze od niego. Zwraca indeks pivota.  *
+ *	Argumenty:							     *
+ *		tab[] - tablica					     *
+ *		left - lewy indeks tablicy           *
+ *		right - prawy indeks tablicy	     */
 template <typename T>
 int podzielnaPartycjeOdwrotne(T tab[], int left, int right)
 {
@@ -69,12 +81,16 @@ int podzielnaPartycjeOdwrotne(T tab[], int left, int right)
 		}
 	}
 
-	//wszystko posortowane - wymieniamy pivota z elementem j-tym
 	tab[right] = tab[j];
 	tab[j] = pivot;
 	return j;
 }
 
+/*	Procedura odwrotnego sortowania szybkiego.				 *
+ *	Argumenty funkcji:										 *
+ *		tab[] - tablica										 *
+ *		left - lewy indeks tablicy							 *
+ *		right - prawy indeks tablicy						 */
 template <typename T>
 void sortujOdwrotnie(T tab[], int left, int right)
 {

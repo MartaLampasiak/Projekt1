@@ -125,7 +125,6 @@
     <ClInclude Include="IntroSort.hpp" />
     <ClInclude Include="mergeSort.hpp" />
     <ClInclude Include="quickSort.hpp" />
-    <ClInclude Include="tester.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="mergeSort_chrono.txt" />

@@ -1,16 +1,20 @@
 #pragma once
-#pragma warning(disable : 4996)
 
-
+/*	Funkcja dzielaca tablice na partycje. *
+ *	Zwraca indeks pivota.				  *
+ *	Argumenty:							  *
+ *		tab[] - tablica					  *
+ *		left - lewy indeks tablicy        *
+ *		right - prawy indeks tablicy	  */
 template <typename T>
 int podzielnaPartycje(T tab[], int left, int right)
 {
-	int i, j, p;
+	int i, j, pivotIndex;
 	T pivot, temp;
 
-	p = (left + right) / 2;
-	pivot = tab[p];
-	tab[p] = tab[right];
+	pivotIndex = (left + right) / 2;
+	pivot = tab[pivotIndex];
+	tab[pivotIndex] = tab[right]; // zamiana pivota z ostatnim elementem 
 
 	for (j = i = left; i < right; ++i)
 	{
@@ -23,13 +27,22 @@ int podzielnaPartycje(T tab[], int left, int right)
 		}
 	}
 
-	//wszystko posortowane - wymieniamy pivota z elementem j - tym
+	// podzial na partycje zakonczony
+	// wymieniamy pivota z elementem j - tym
 	tab[right] = tab[j];
 	tab[j] = pivot;
-	return j;
+	return j; //zwracamy aktualny indeks pivota
 }
 
 
+/*	Procedura sortowania szybkiego.							 *
+ *	Argumenty funkcji:										 *
+ *		tab[] - tablica										 *
+ *		left - lewy indeks tablicy							 *
+ *		right - prawy indeks tablicy						 *
+ *		ilePosortowane - parametr okreslajacy czesc tablicy  *
+ *						 wstepnie posortowanej, wartosc		 *
+ *						 z zakresu 0-1						 */
 template <typename T>
 void quickSort(T tab[], int left, int right, double ilePosortowane)
 {
