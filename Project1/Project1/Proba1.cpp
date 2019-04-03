@@ -46,7 +46,7 @@ int main()
 			{
 				for (int i = 0; i < wiersz - 1; ++i)
 				{
-					sortujOdwrotnie(tablica[i], 0, rozmiaryTablic[rozmiar] - 1); // wstêpne odwrotne sortowanie
+					sortujOdwrotnie(tablica[i], 0, rozmiaryTablic[rozmiar] - 1); 
 				}
 			}
 
@@ -56,7 +56,7 @@ int main()
 			{
 				for (int i = 0; i < wiersz - 1; ++i)
 				{
-					quickSort(tablica[i], 0, rozmiaryTablic[rozmiar] - 1, wstepnePosortowanie[posortowanie]); //wstêpne sortowanie
+					quickSort(tablica[i], 0, rozmiaryTablic[rozmiar] - 1, wstepnePosortowanie[posortowanie]); 
 				}
 			}
 			

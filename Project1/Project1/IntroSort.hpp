@@ -6,13 +6,12 @@
 
 
 /*	Procedura sortowania introspektywnego.		*
- *	Argumenty funkcji:							*
+ *	Argumenty:									*
  *		tab[] - tablica							*
  *		left - lewy indeks tablicy			    *
- *		right - rozmiar tablicy				    *
+ *		right - prawy indeks tablicy			*
  *		MaxRekurencji - przyjeta glebokosc		*
-						wywolan rekurencyjnych  */
-				
+						wywolan rekurencyjnych  */	
 template <typename T>
 void IntroSort(T tab[], int left, int right, int MaxRekurencji)
 {
@@ -27,12 +26,6 @@ void IntroSort(T tab[], int left, int right, int MaxRekurencji)
 			IntroSort(tab, pivotIndex + 1, right, MaxRekurencji - 1);	
 	}
 }
-
-/*	Przeciazenie procedury IntroSort			*
- *  w celu podania glebokosci rekurencji		*
- *	Argumenty funkcji:							*
- *		tab[] - tablica							*
- *		right - rozmiar tablicy				    */
 
 template <typename T>
 void IntroSort(T tab[], int right)

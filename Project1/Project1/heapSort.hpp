@@ -1,7 +1,6 @@
 #pragma once
 
 /*	Procedura przywracajaca kopiec.		  *
- *	Zwraca indeks pivota.				  *
  *	Argumenty:							  *
  *		tab[] - tablica					  *
  *		parentIndex - indeks rodzica      *

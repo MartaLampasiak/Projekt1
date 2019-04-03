@@ -36,7 +36,7 @@ int podzielnaPartycje(T tab[], int left, int right)
 
 
 /*	Procedura sortowania szybkiego.							 *
- *	Argumenty funkcji:										 *
+ *	Argumenty:												 *
  *		tab[] - tablica										 *
  *		left - lewy indeks tablicy							 *
  *		right - prawy indeks tablicy						 *

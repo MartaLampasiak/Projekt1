@@ -55,7 +55,7 @@ bool czyPosortowanaMalejaco(T **tab, int wiersz, int rozmiar)
 
 /*	Funkcja dzielaca tablice na partycje     *
  *	odwrotne (z lewej strony pivota elementy *
- *  wieksze od niego. Zwraca indeks pivota.  *
+ *  wieksze od niego). Zwraca indeks pivota. *
  *	Argumenty:							     *
  *		tab[] - tablica					     *
  *		left - lewy indeks tablicy           *
